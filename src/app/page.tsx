@@ -1,28 +1,13 @@
-export default function Home() {
+import { getPosts } from "@/utils";
+
+export default async function Page() {
+  const posts = await getPosts();
   return (
     <>
       <header>
         <h1 className="font-bold text-7xl">Adrian Cuadrado</h1>
       </header>
       <main className="flex flex-row">
-        <section className="grow flex flex-col items-center">
-          <article>
-            <h1 className="font-bold text-4xl">My SaaS startup checklist</h1>
-            <p>This is what my checklist looks like: ...</p>
-          </article>
-          <article>
-            <h1 className="font-bold text-4xl">My SaaS startup checklist</h1>
-            <p>This is what my checklist looks like: ...</p>
-          </article>
-          <article>
-            <h1 className="font-bold text-4xl">My SaaS startup checklist</h1>
-            <p>This is what my checklist looks like: ...</p>
-          </article>
-          <article>
-            <h1 className="font-bold text-4xl">My SaaS startup checklist</h1>
-            <p>This is what my checklist looks like: ...</p>
-          </article>
-        </section>
         <section className="flex flex-col gap-2">
           <div className="flex flex-col border">
             <a className="hover:underline text-red-500" href="">
@@ -60,7 +45,10 @@ export default function Home() {
                 </a>
               </li>
               <li>
-                <a className="hover:underline text-red-500" href="">
+                <a
+                  className="hover:underline"
+                  href="https://x.com/adrcuadchav97"
+                >
                   Twitter / X
                 </a>
               </li>
@@ -90,6 +78,14 @@ export default function Home() {
               </li>
             </ul>
           </div>
+        </section>
+        <section className="grow flex flex-col items-center">
+          {posts.map((post) => (
+            <article key={post}>
+              <h1 className="font-bold text-4xl">{post}</h1>
+              <p>{post}</p>
+            </article>
+          ))}
         </section>
       </main>
     </>
