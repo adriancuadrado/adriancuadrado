@@ -1,4 +1,4 @@
-import { getPosts } from "@/utils";
+import { posts } from "@/utils";
 
 export default async function Page({
   params,
@@ -6,12 +6,13 @@ export default async function Page({
   params: Promise<{ blogPost: string }>;
 }) {
   const { blogPost } = await params;
-  const { default: Post } = await import(`@/posts/${blogPost}.md`);
+  const { default: Post } = await import(`@/posts/${blogPost}.md`).catch(
+    () => import(`@/posts/${blogPost}.mdx`)
+  );
   return <Post />;
 }
 
 export async function generateStaticParams() {
-  const posts = await getPosts();
   return posts.map((p) => ({ blogPost: p }));
 }
 

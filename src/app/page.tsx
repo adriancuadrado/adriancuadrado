@@ -1,7 +1,6 @@
-import { getPosts } from "@/utils";
+import { posts } from "@/utils";
 
 export default async function Page() {
-  const posts = await getPosts();
   return (
     <>
       <header>
@@ -16,7 +15,20 @@ export default async function Page() {
             <a className="hover:underline text-red-500" href="">
               RSS feed
             </a>
+            <a className="hover:underline text-red-500" href="">
+              Notifications
+            </a>
           </div>
+        </section>
+        <section className="grow flex flex-col items-center">
+          {posts.map((post) => (
+            <article key={post}>
+              <h1 className="font-bold text-4xl">{post}</h1>
+              <p>{post}</p>
+            </article>
+          ))}
+        </section>
+        <section className="flex flex-col gap-2">
           <div className="border flex flex-col">
             <h2 className="font-bold text-2xl">Social networks</h2>
             <ul>
@@ -78,14 +90,6 @@ export default async function Page() {
               </li>
             </ul>
           </div>
-        </section>
-        <section className="grow flex flex-col items-center">
-          {posts.map((post) => (
-            <article key={post}>
-              <h1 className="font-bold text-4xl">{post}</h1>
-              <p>{post}</p>
-            </article>
-          ))}
         </section>
       </main>
     </>

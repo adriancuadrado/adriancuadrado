@@ -2,7 +2,33 @@ import { readdir } from "node:fs/promises";
 import { join, parse } from "node:path";
 import { cwd } from "node:process";
 
-export async function getPosts() {
-  const files = await readdir(join(cwd(), "src", "posts"));
-  return files.map((f) => parse(f).name);
+async function getPosts() {
+  const files = await readdir(join(cwd(), "src", "posts"), {
+    withFileTypes: true,
+  });
+  if (
+    files.some(
+      (file) =>
+        file.isDirectory() || ["md", "mdx"].includes(parse(file.name).ext)
+    )
+  ) {
+    throw new Error(
+      "The `posts` folder should only have markdown files and nothing else."
+    );
+  }
+  const fileNames = files.map((file) => parse(file.name).name);
+  const uniqueFileNames = [...new Set(fileNames)];
+
+  if (fileNames.length != uniqueFileNames.length) {
+    throw new Error(
+      `There are at least 2 posts with the same name:\n${uniqueFileNames
+        .filter((fileName) => fileNames.filter((f) => f == fileName).length > 1)
+        .join(
+          ", "
+        )}.\n\nThis can happen if you create 2 posts with the same name but with md and mdx extensions.`
+    );
+  }
+  return fileNames;
 }
+
+export const posts = await getPosts();
