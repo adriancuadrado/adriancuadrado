@@ -18,7 +18,7 @@ export async function GET() {
       title: post,
       description: post,
       url: `${process.env.ROOT_URL}/${post}`,
-      date: new Date(`${date}T${time.replace("-", ":")}Z`),
+      date: new Date(`${date}T${time.replaceAll("-", ":")}Z`),
     });
   });
   return new Response(
