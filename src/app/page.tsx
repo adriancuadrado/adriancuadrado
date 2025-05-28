@@ -1,4 +1,4 @@
-import { posts } from "@/utils";
+import { POSTS } from "@/utils";
 
 export default async function Page() {
   return (
@@ -21,7 +21,7 @@ export default async function Page() {
           </div>
         </section>
         <section className="grow flex flex-col items-center">
-          {posts.map((post) => (
+          {POSTS.map((post) => (
             <article key={post}>
               <h1 className="font-bold text-4xl">{post}</h1>
               <p>{post}</p>

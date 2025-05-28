@@ -1,4 +1,4 @@
-import { posts } from "@/utils";
+import { POSTS } from "@/utils";
 
 export default async function Page({
   params,
@@ -13,7 +13,7 @@ export default async function Page({
 }
 
 export async function generateStaticParams() {
-  return posts.map((p) => ({ blogPost: p }));
+  return POSTS.map((p) => ({ blogPost: p }));
 }
 
 export const dynamicParams = false;

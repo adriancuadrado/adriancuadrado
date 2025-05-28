@@ -6,6 +6,7 @@ async function getPosts() {
   const files = await readdir(join(cwd(), "src", "posts"), {
     withFileTypes: true,
   });
+
   if (
     files.some(
       (file) =>
@@ -16,6 +17,7 @@ async function getPosts() {
       "The `posts` folder should only have markdown files and nothing else."
     );
   }
+
   const fileNames = files.map((file) => parse(file.name).name);
   const uniqueFileNames = [...new Set(fileNames)];
 
@@ -28,7 +30,21 @@ async function getPosts() {
         )}.\n\nThis can happen if you create 2 posts with the same name but with md and mdx extensions.`
     );
   }
+
+  if (
+    fileNames.some(
+      (fileName) =>
+        !/^[0-9]{4}(?:-[0-3][0-9]){2}_[[0-2][0-9](?:-[0-5][0-9]){2}$/.test(
+          fileName
+        )
+    )
+  ) {
+    throw new Error(
+      `There is a post whose filename doesn't have the correct YYYY-MM-DD_hh-mm-ss format.`
+    );
+  }
+
   return fileNames;
 }
 
-export const posts = await getPosts();
+export const POSTS = await getPosts();
