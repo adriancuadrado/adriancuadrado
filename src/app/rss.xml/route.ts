@@ -17,7 +17,7 @@ export async function GET() {
     feed.item({
       title: post,
       description: post,
-      url: `${process.env.ROOT_URL}/${post}/`,
+      url: `${process.env.ROOT_URL}/${post}`,
       date: new Date(`${date}T${time.replace("-", ":")}Z`),
     });
   });
