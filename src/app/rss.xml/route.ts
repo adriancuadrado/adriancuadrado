@@ -24,7 +24,12 @@ export async function GET() {
   return new Response(
     feed.xml({
       indent: process.env.NODE_ENV != "production",
-    })
+    }),
+    {
+      headers: {
+        "Content-Type": "text/xml; charset=utf-8",
+      },
+    }
   );
 }
 
