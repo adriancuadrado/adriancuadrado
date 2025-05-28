@@ -9,15 +9,18 @@ export default async function Page() {
       <main className="flex flex-row">
         <section className="flex flex-col gap-2">
           <div className="flex flex-col border">
-            <a className="hover:underline text-red-500" href="">
+            <a
+              className="hover:underline"
+              href="https://forms.gle/TgX92fPt3KQpbgnKA"
+            >
               Newsletter
             </a>
-            <a className="hover:underline text-red-500" href="">
+            <a className="hover:underline" href="rss.xml">
               RSS feed
             </a>
-            <a className="hover:underline text-red-500" href="">
+            {/* <a className="hover:underline text-red-500" href="">
               Notifications
-            </a>
+            </a> */}
           </div>
         </section>
         <section className="grow flex flex-col items-center">
