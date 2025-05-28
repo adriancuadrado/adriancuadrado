@@ -68,7 +68,7 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
-          ROOT_URL: https://adriancuadrado.github.io
+          ROOT_URL: ${{ vars.ROOT_URL }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
