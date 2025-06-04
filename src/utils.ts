@@ -2,7 +2,13 @@ import { readdir } from "node:fs/promises";
 import { join, parse } from "node:path";
 import { cwd } from "node:process";
 
-async function getPosts() {
+async function getPosts(): // : Promise<{
+//   [key: string]: (args: MDXProps) => Element;
+// }>
+Promise<{
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
+}> {
   const files = await readdir(join(cwd(), "src", "posts"), {
     withFileTypes: true,
   });
@@ -40,11 +46,20 @@ async function getPosts() {
     )
   ) {
     throw new Error(
-      `There is a post whose filename doesn't have the correct YYYY-MM-DD_hh-mm-ss format.`
+      "There is a post whose filename doesn't have the correct YYYY-MM-DD_hh-mm-ss format."
     );
   }
 
-  return fileNames;
+  return Object.fromEntries(
+    await Promise.all(
+      fileNames.map(async (fileName) => [
+        fileName,
+        await import(`@/posts/${fileName}.md`).catch(
+          () => import(`@/posts/${fileName}.mdx`)
+        ),
+      ])
+    )
+  );
 }
 
 export const POSTS = await getPosts();

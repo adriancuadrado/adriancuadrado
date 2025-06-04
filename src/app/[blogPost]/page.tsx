@@ -1,19 +1,19 @@
-import { POSTS } from "@/utils";
+// import { POSTS } from "@/utils";
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ blogPost: string }>;
-}) {
-  const { blogPost } = await params;
-  const { default: Post } = await import(`@/posts/${blogPost}.md`).catch(
-    () => import(`@/posts/${blogPost}.mdx`)
-  );
-  return <Post />;
+export default async function Page() {
+  //   {
+  //   params,
+  // }: {
+  //   params: Promise<{ blogPost: string }>;
+  // }
+  // const { blogPost } = await params;
+  // return POSTS[blogPost];
+  return null;
 }
 
 export async function generateStaticParams() {
-  return POSTS.map((p) => ({ blogPost: p }));
+  // return Object.keys(POSTS);
+  return "2025-05-25_19-48-01";
 }
 
 export const dynamicParams = false;
