@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppinsSans.variable} antialiased flex justify-between`}
+        className={`${poppinsSans.variable} antialiased flex justify-between mt-[145px] mb-[145px] ml-[23px] mr-[23px] bg-background items-start`}
       >
         <LeftPane />
         {children}
