@@ -17,7 +17,7 @@ export default function SocialNetworks() {
         href="https://www.linkedin.com/in/adrian-cuadrado-chavarria/"
       >
         <Image
-          src={LinkedinLogo}
+          src={BlueskyLogo}
           alt=""
           className="transform-[scale(0.7)_translate(0,3px)]"
         />
@@ -27,21 +27,21 @@ export default function SocialNetworks() {
         className="hover:underline flex justify-center bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] size-[37px] rounded-3xl"
         href="https://www.twitch.tv/adriancuad"
       >
-        <Image src={TwitchLogo} alt="" />
+        <Image src={GithubLogo} alt="" />
       </Link>
 
       <Link
         className="hover:underline flex justify-center bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] size-[37px] rounded-3xl"
         href="https://youtube.com/@adriancuad?si=EBtiurApBIvTkXN6"
       >
-        <Image src={YoutubeLogo} alt="" />
+        <Image src={LinkedinLogo} alt="" />
       </Link>
 
       <Link
         className="hover:underline flex justify-center bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] size-[37px] rounded-3xl"
         href="https://x.com/adrcuadchav97"
       >
-        <Image src={XLogo} alt="" />
+        <Image src={RedditLogo} alt="" />
       </Link>
 
       <Link
@@ -49,7 +49,7 @@ export default function SocialNetworks() {
         href="https://bsky.app/profile/adriancuad.bsky.social"
       >
         <Image
-          src={BlueskyLogo}
+          src={TwitchLogo}
           alt=""
           className="transform-[scale(0.6)_translate(1px,3px)]"
         />
@@ -59,14 +59,14 @@ export default function SocialNetworks() {
         className="hover:underline flex justify-center bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] size-[37px] rounded-3xl"
         href="https://www.reddit.com/user/AdrianCuad/"
       >
-        <Image src={RedditLogo} alt="" className="transform-[scale(0.6)]" />
+        <Image src={XLogo} alt="" className="transform-[scale(0.6)]" />
       </Link>
 
       <Link
         className="hover:underline flex justify-center bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] size-[37px] rounded-3xl"
         href="https://github.com/adriancuadrado/"
       >
-        <Image src={GithubLogo} alt="" />
+        <Image src={YoutubeLogo} alt="" />
       </Link>
     </div>
   );
