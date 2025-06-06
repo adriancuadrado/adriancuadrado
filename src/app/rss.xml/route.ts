@@ -12,7 +12,7 @@ export async function GET() {
     site_url: process.env.ROOT_URL,
   });
 
-  POSTS.forEach((post) => {
+  Object.keys(POSTS).forEach((post) => {
     const [date, time] = post.split("_");
     feed.item({
       title: post,
