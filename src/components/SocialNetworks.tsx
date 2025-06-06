@@ -14,7 +14,7 @@ export default function SocialNetworks() {
     <div className="sticky top-[145px] flex flex-col gap-[23px]">
       <Link
         className="hover:underline flex justify-center bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] size-[37px] rounded-3xl"
-        href="https://www.linkedin.com/in/adrian-cuadrado-chavarria/"
+        href="https://bsky.app/profile/adriancuad.bsky.social"
       >
         <Image
           src={BlueskyLogo}
@@ -25,28 +25,28 @@ export default function SocialNetworks() {
 
       <Link
         className="hover:underline flex justify-center bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] size-[37px] rounded-3xl"
-        href="https://www.twitch.tv/adriancuad"
+        href="https://github.com/adriancuadrado/"
       >
         <Image src={GithubLogo} alt="" />
       </Link>
 
       <Link
         className="hover:underline flex justify-center bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] size-[37px] rounded-3xl"
-        href="https://youtube.com/@adriancuad?si=EBtiurApBIvTkXN6"
+        href="https://www.linkedin.com/in/adrian-cuadrado-chavarria/"
       >
         <Image src={LinkedinLogo} alt="" />
       </Link>
 
       <Link
         className="hover:underline flex justify-center bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] size-[37px] rounded-3xl"
-        href="https://x.com/adrcuadchav97"
+        href="https://www.reddit.com/user/AdrianCuad/"
       >
         <Image src={RedditLogo} alt="" />
       </Link>
 
       <Link
         className="hover:underline flex justify-center bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] size-[37px] rounded-3xl"
-        href="https://bsky.app/profile/adriancuad.bsky.social"
+        href="https://www.twitch.tv/adriancuad"
       >
         <Image
           src={TwitchLogo}
@@ -57,14 +57,14 @@ export default function SocialNetworks() {
 
       <Link
         className="hover:underline flex justify-center bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] size-[37px] rounded-3xl"
-        href="https://www.reddit.com/user/AdrianCuad/"
+        href="https://x.com/adrcuadchav97"
       >
         <Image src={XLogo} alt="" className="transform-[scale(0.6)]" />
       </Link>
 
       <Link
         className="hover:underline flex justify-center bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] size-[37px] rounded-3xl"
-        href="https://github.com/adriancuadrado/"
+        href="https://youtube.com/@adriancuad?si=EBtiurApBIvTkXN6"
       >
         <Image src={YoutubeLogo} alt="" />
       </Link>
