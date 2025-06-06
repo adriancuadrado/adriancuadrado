@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function SocialNetworks() {
   return (
-    <ul className="flex flex-col gap-[23px]">
+    <ul className="sticky top-[145px] flex flex-col gap-[23px]">
       <li>
         <Link
           className="hover:underline bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] block size-[37px] rounded-3xl"

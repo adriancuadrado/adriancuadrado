@@ -1,13 +1,14 @@
+import { MDXProps } from "mdx/types";
 import { readdir } from "node:fs/promises";
 import { join, parse } from "node:path";
 import { cwd } from "node:process";
+import { JSX } from "react";
 
-async function getPosts(): // : Promise<{
-//   [key: string]: (args: MDXProps) => Element;
-// }>
-Promise<{
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any;
+async function getPosts(): Promise<{
+  [key: string]: {
+    meta: { [key in "title" | "summary"]: string };
+    default: (args: MDXProps) => JSX.Element;
+  };
 }> {
   const files = await readdir(join(cwd(), "src", "posts"), {
     withFileTypes: true,
